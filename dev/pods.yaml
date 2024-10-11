@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx               # Add a label for better identification
 spec:
-  replicas: 1
+  replicas: 2
   strategy:
     type: Recreate
   selector:
@@ -22,7 +22,7 @@ spec:
         command:
         - /bin/sh
         - -c
-        - echo 'Hello i am dev server' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'
+        - echo 'Hello i am dev server with ngix' > /usr/share/nginx/html/index.html && nginx -g 'daemon off;'
         ports:
         - containerPort: 80
 ---
